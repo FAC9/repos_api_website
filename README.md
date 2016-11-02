@@ -1,4 +1,4 @@
-# Repos API film website
+# Repos API film generator web app
 
 ![MOCKUP](https://github.com/FAC9/repos_api_website/blob/master/ApiProject.png)
 
@@ -16,9 +16,9 @@ A responsive web app that uses the The Movie Database(Tmbd) API to find the film
 
 The gif and some basic information about the film will be displayed on a new page. This basic information will be:
 
-1. brief synopsis
-2. director
-3. actors
+1. title
+2. genre
+3. release year
 
 ## Why?
 
