@@ -1,0 +1,39 @@
+
+/* Fixing the button mysterious margin */
+.button {
+  margin-left:0px;
+  margin-right: 0px;
+  float:left;
+  white-space: nowrap;
+}
+
+.filter-row {
+    margin-bottom: 10px;
+}
+
+/*Horizontally aligning */
+section {
+   margin: 0 auto;
+}
+
+#title  {
+  text-align: center;
+}
+
+#title h1 {
+	font-size:1.5rem;
+}
+
+#infoIcon {
+  float:right;
+  margin-right:1em;
+}
+
+#page1 {
+		background-image: url(../images/seats.jpg..jpg);
+		background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+		height:100%;
+
+}
