@@ -6,7 +6,7 @@
 
 This web app is for people who want to generate a random film to watch in response to a set of 3 filters:
 
-1. genre 
+1. genre
 2. release date
 3. length
 
@@ -23,7 +23,7 @@ A responsive web app that uses the The Movie Database(Tmbd) API to find the film
 
 To learn about using API's and to create a useful tool for people to find random films.
 
-## How? 
+## How?
 
 - using TDD
 - using at least 2 API's
@@ -33,4 +33,4 @@ To learn about using API's and to create a useful tool for people to find random
 
 - more search filters
 - search netflix or Amazon for where to buy/watch film. This would include creating a button to link you to a new page.
-- Employ a further API to provide a location for watching the film. 
+- Employ a further API to provide a location for watching the film.
