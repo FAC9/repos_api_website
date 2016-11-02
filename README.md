@@ -11,6 +11,7 @@ This web app is for people who want to generate a random film to watch in respon
 3. length
 
 ## What?
+Core features:
 
 A responsive web app that uses the The Movie Database(Tmbd) API to find the film data and will use the Giphy API to generate a gif in response to the film title.
 
@@ -22,4 +23,11 @@ The gif and some basic information about the film will be displayed on a new pag
 
 ## Why?
 
-To learn about using API's and to create a useful tool for people to find random films. 
+To learn about using API's and to create a useful tool for people to find random films.
+
+## HOW? 
+
+- Using TDD
+- Using at least 2 API's
+- gitIgnore to hide the API key.
+
