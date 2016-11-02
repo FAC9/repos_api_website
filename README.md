@@ -1,6 +1,6 @@
 # Repos API film generator web app
 
-![MOCKUP](https://github.com/FAC9/repos_api_website/blob/master/ApiProject.png)
+![MOCKUP](https://github.com/FAC9/repos_api_website/blob/master/ApiMockup2.png)
 
 ## Who?
 
