@@ -1,5 +1,7 @@
 # Repos API film website
 
+![MOCKUP](https://github.com/FAC9/repos_api_website/blob/master/ApiProject.png)
+
 ## Who?
 
 This web app is for people who want to generate a random film to watch in response to a set of 3 filters:
