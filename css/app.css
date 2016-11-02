@@ -1,5 +1,12 @@
 
 /* Fixing the button mysterious margin */
+body {
+	  font-family: 'Dosis', sans-serif;
+		font-size: 0.875rem;
+		color:white;
+		font-weight: bold;
+}
+
 .button {
   margin-left:0px;
   margin-right: 0px;
@@ -22,6 +29,10 @@ section {
 
 #title h1 {
 	font-size:1.5rem;
+}
+
+#title p {
+
 }
 
 #infoIcon {
