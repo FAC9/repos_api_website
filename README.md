@@ -18,7 +18,7 @@ A responsive web app that uses the The Movie Database(Tmbd) API to find the film
 This will be activated by a 'generate' button and the gif and some basic information about the film will be displayed on a new page. This basic information will be:
 
 1. title
-2. genre
+2. genres
 3. release year
 
 Stretch Goals:
@@ -30,9 +30,14 @@ Stretch Goals:
 
 To learn about using API's and to create a useful tool for people to find random films.
 
-## HOW? 
+## How? 
 
-- Using TDD
-- Using at least 2 API's
-- gitIgnore to hide the API key.
+- using TDD
+- using at least 2 API's
+- gitIgnore to hide the API key
+
+## Stretch Goals
+
+- more search filters
+- search netflix or Amazon for where to buy/watch film. This would include creating a button to link you to a new page.
 
