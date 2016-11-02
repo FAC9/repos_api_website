@@ -13,7 +13,7 @@ This web app is for people who want to generate a random film to watch in respon
 ## What?
 Core features:
 
-A responsive web app that uses the The Movie Database(Tmbd) API to find the film data and will use the Giphy API to generate a gif in response to the film title. On the home screen you will find a 'generate' button, this will take you to a new page where and the gif and some basic information about the film will be displayed on a new page. This basic information will be:
+A responsive web app that uses the The Movie Database(Tmbd) API to find the film data and will use the Giphy API to generate a gif in response to the film title. On the home screen you will find a 'generate' button, this will take you to a new page where a gif and some basic information about the film will be displayed. The basic information about the film will be:
 
 1. title
 2. genres
