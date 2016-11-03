@@ -14,6 +14,7 @@ var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&la
 
 //standard xmlhttmp request (reusable)
 function makeRequest(url, cb) {
+  console.log("url: ",url);
   httpRequest = new XMLHttpRequest();
   if (!httpRequest) {
     alert('Giving up :( Cannot create an XMLHTTP instance');
@@ -30,7 +31,7 @@ function makeRequest(url, cb) {
   };
   httpRequest.open('GET', url);
   httpRequest.send();
-  }
+}
 
 var waterfall = function(arg, tasks, cb) {
   var next = tasks[0]
@@ -92,6 +93,7 @@ function getGiphy(title, cb){
 
 //triggered by dom event listeners
 function updateDomWithMovieDetails(arg, cb){
+  console.log("fffff");
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
   document.getElementById("summary").innerHTML = currentMovie.summary;
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
@@ -102,6 +104,7 @@ function updateDomWithMovieDetails(arg, cb){
 
 //helper functions
 function parseMovieDetails(movie){
+  console.log("hhhhhhhhhhhh");
   currentMovie.id = movie.id;
   currentMovie.title= movie.title;
   currentMovie.summary = movie.overview;
@@ -146,7 +149,6 @@ generateButton.forEach(addEventListener("click", function() {
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
-    getMovieDetails,
     getMovieDetails,
     getGiphy,
     updateDomWithMovieDetails
