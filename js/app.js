@@ -3,7 +3,6 @@ var randomPage = 0;
 //xhr.addEventListener("load", function() {
 var apikey = config.apikey;
 var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
-
 function makeRequest(url, cb) {
     httpRequest = new XMLHttpRequest();
     if (!httpRequest) {

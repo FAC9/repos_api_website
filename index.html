@@ -1,19 +1,85 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Movie Generator</title>
-  <link rel="stylesheet" href="./app.css">
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/grid.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+
   <script type='text/javascript' src='./js/config.js'></script>
   <script src="./js/app.js"></script>
 </head>
 
 <body>
 <!--page 1-->
+<section id="page1" class= "col-12">
+
+  <section id ="nav" class="col-12">
+    <section id="infoIcon" class="col-f-1 col-1">
+      <i id="plus" class="material-icons" style="font-size:48px;color:white">add_circle</i>
+    </section>
+  </section>
+
+  <section id="title" class= "col-12">
+    <h1>Movie Generator</h1>
+    <p>"Relax, sit back and let us find you your perfect film"</p>
+  </section>
+
+  <section id="filters" class="col-6 col-m-8">
+    <section id="genre" class="filter-row">
+      <p id="genreTitle">Genre</p>
+      <button id="action" class="f-button col-f-3">Action</button>
+      <button id="animation" class="f-button col-f-3">Animation</button>
+      <button id="comedy" class="f-button col-f-3">Comedy</button>
+      <button id="family" class="f-button col-f-3">Family</button>
+      <button id="horror" class="f-button col-f-3">Horror</button>
+      <button id="romance" class="f-button col-f-3">Romance</button>
+      <button id="scifi" class="f-button col-f-3">SciFi</button>
+      <button id="thriller" class="f-button col-f-3">Thriller</button>
+    </section>
+
+    <section id="realseDate" class="filter-row">
+      <p id="releaseDateTitle">Release Date</p>
+      <button id="2016" class="f-button col-f-2">2016</button>
+      <button id="2015" class="f-button col-f-2">2015</button>
+      <button id="2010-2014" class="f-button col-f-2">2010-2014</button>
+      <button id="00" class="f-button col-f-2">00's</button>
+      <button id="90" class="f-button col-f-2">90's</button>
+      <button id="80" class="f-button col-f-2">80's</button>
+    </section>
+
+    <section id="rating" class="filter-row">
+      <p id="ratingTitle">Rating</p>
+      <button id="8" class="f-button col-f-3">8+</button>
+      <button id="7" class="f-button col-f-3">7+</button>
+      <button id="6" class="f-button col-f-3">6+</button>
+      <button id="5" class="f-button col-f-3">5+</button>
+    </section>
+
+  </section>
+
+  <section id="generate" class="col-12">
+    <button id="generateBtn" class="button col-f-6 col-m-4 col-3">Generate</button>
+  </section>
+
+
+</section>
+
+
 
 <!--page2-->
+
+
+<section id ="page2" class="col-12">
+</section>
 
 
 <!--TESTS-->
@@ -21,7 +87,6 @@
 <div id="qunit-fixture"></div>
 <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
 <script src="./qUnit/test.js"></script>
-
 
 </body>
 
