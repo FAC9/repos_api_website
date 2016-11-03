@@ -1,6 +1,13 @@
 
 /* Fixing the button mysterious margin */
-.button {
+body {
+	  font-family: 'lato', 'Dosis', sans-serif;
+		font-size: 0.9rem;
+		color:white;
+		font-weight: bold;
+}
+
+.f-button {
   margin-left:0px;
   margin-right: 0px;
   float:left;
@@ -15,6 +22,11 @@
 section {
    margin: 0 auto;
 }
+
+#generate {
+	text-align: center;
+}
+
 
 #title  {
   text-align: center;
