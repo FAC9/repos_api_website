@@ -113,6 +113,16 @@ function parseMovieDetails(movie){
   currentMovie.rating = movie.vote_average;
 }
 
+function buildUrl(){
+  var arr = document.getElementsByClassName("genre-filter");
+  console.log(arr);
+  console.log('---------------')
+  console.log(arr[0].value);
+  if(document.getElementById("filter-genre-action").checked == true){
+    url += "&with_genres=" + document.getElementById("filter-genre-action").value;
+  }
+}
+
 function trucateSummary() {
   var fullText = currentMovie.summary;
   var truncated = fullText.length <= 150 ? fullText : fullText.slice(0, 150) + "...";
@@ -158,9 +168,10 @@ console.log(generateAll);
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
   show("page1", "page2");
-  if(document.getElementById("filter-genre-action").checked == true){
-    console.log("action clicked");
-  }
+  // if(document.getElementById("filter-genre-action").checked == true){
+  //   console.log("action clicked");
+  // }
+  buildUrl();
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,

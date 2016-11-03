@@ -19,7 +19,7 @@ html{
 
 body::after {
   content: "";
-  background: url(../images/seats.jpg) no-repeat center center;
+  background: url(../Images/seats.jpg) no-repeat center center;
   background-size:cover;
   top: 0;
   left: 0;
