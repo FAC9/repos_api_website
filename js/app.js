@@ -5,7 +5,8 @@ var currentMovie = {
   summary: "",
   releaseYear: 0,
   length: 0,
-  rating: 0
+  rating: 0,
+  gif: ""
 };
 var apikey = config.apikey;
 var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
@@ -76,10 +77,19 @@ function getMovieDetails(id, cb){
     var apiResponse = JSON.parse(res);
     parseMovieDetails(apiResponse);
     console.log(currentMovie);
-    return cb(null, currentMovie.id);
+    return cb(null, currentMovie.title);
   });
 }
 
+function getGiphy(title, cb){
+  var gurl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=movie+" + title;
+  console.log(gurl, "GURRRLL");
+  makeRequest(gurl, function(err, res){
+    var apiResponse = JSON.parse(res);
+    currentMovie.gif = apiResponse.data.fixed_height_downsampled_url;
+    return cb(null, currentMovie);
+  })
+}
 
 //triggered by dom event listeners
 
@@ -132,13 +142,13 @@ generateButton.addEventListener("click", function() {
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
-    getMovieDetails
+    getMovieDetails,
+    getGiphy
   ], function(error, result) {
     if (error) {
       throw new Error('test failed with error: ' + error)
     }
   })
-
 });
 
 function show(shown, hidden) {
