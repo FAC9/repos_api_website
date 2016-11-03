@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
 
   <script type='text/javascript' src='./js/config.js'></script>
-  <script src="./js/app.js"></script>
+
 </head>
 
 <body>
@@ -78,15 +78,45 @@
 
 
 <section id ="page2" class="col-12">
+
+  <section id ="nav" class="col-12">
+    <section id="infoIcon" class="col-f-1 col-1">
+      <i id="plus" class="material-icons" style="font-size:48px;color:white">add_circle</i>
+    </section>
+  </section>
+
+  <section id="title" class= "col-12">
+    <h1>Film Name</h1>
+  </section>
+
+  <section id="posterSpace" class="col-6">
+    <img id="filmPoster" src ="./Images/Elsa.jpg">
+  </section>
+
+  <section id="filmInfo" class="col-12">
+    <section id="synopsis" class="col-6 col-m-8 col-f-12">
+      <p>This film is about a group of four coders battling it out to create an awesome web app that uses API's to generate 'random' movies</p>
+    </section>
+
+    <section id="stats" class=" col-6 col-m-8 col-f-12">
+      <p>Release Year</p>
+      <p>Length</p>
+      <p>Rating</p>
+    </section>
+
+  </section>
+
 </section>
 
+<script src="./js/app.js"></script>
 
 <!--TESTS-->
+<!--
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
 <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
 <script src="./qUnit/test.js"></script>
-
+-->
 </body>
 
 
