@@ -5,7 +5,8 @@ var currentMovie = {
   summary: "",
   releaseYear: 0,
   length: 0,
-  rating: 0
+  rating: 0,
+  gif: ""
 };
 
 var apikey = config.apikey;
@@ -75,10 +76,25 @@ function getMovieDetails(id, cb){
     var apiResponse = JSON.parse(res);
     parseMovieDetails(apiResponse);
     console.log(currentMovie);
-    return cb(null, currentMovie.id);
+    return cb(null, currentMovie.title);
   });
 }
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+
+=======
+function getGiphy(title, cb){
+  var gurl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=movie+" + title;
+  console.log(gurl, "GURRRLL");
+  makeRequest(gurl, function(err, res){
+    var apiResponse = JSON.parse(res);
+    currentMovie.gif = apiResponse.data.fixed_height_downsampled_url;
+    return cb(null, currentMovie);
+  })
+}
+
+>>>>>>> e64fc9af09c6c71c25ecc01bf981a5fd63d42bc3
 //triggered by dom event listeners
 function updateDomWithMovieDetails(arg, cb){
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
@@ -136,14 +152,20 @@ generateButton.addEventListener("click", function() {
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
+<<<<<<< HEAD
     getMovieDetails,
     updateDomWithMovieDetails
+||||||| merged common ancestors
+    getMovieDetails
+=======
+    getMovieDetails,
+    getGiphy
+>>>>>>> e64fc9af09c6c71c25ecc01bf981a5fd63d42bc3
   ], function(error, result) {
     if (error) {
       throw new Error('test failed with error: ' + error)
     }
   })
-
 });
 
 function show(shown, hidden) {
