@@ -18,7 +18,6 @@ function getResults(url) {
 }
 
 var apikey = config.apikey;
-console.log(apikey);
 var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true"
 getResults(url);
 getResults(url + "&page=" + randomPage);
