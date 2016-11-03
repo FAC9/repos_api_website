@@ -95,8 +95,8 @@ section {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
 	background-color:#eae0c2;
 	cursor:pointer;
-	color:black;
-	font-family:"Lato";
+	color:#505739;
+		font-family:Verdana;
 	font-size:15px;
 	font-weight:600;
 	padding:10px 16px;

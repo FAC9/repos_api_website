@@ -22,3 +22,9 @@ var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&la
 getResults(url);
 getResults(url + "&page=" + randomPage);
 console.log(randomPage);
+
+
+var filterBtn = document.getElementsByClassName("f-button");
+var genre;
+var releaseDate;
+var rating;
