@@ -212,6 +212,10 @@ display: inline-block;
 	font-size: 1.5em;
 }
 
+#summary-more {
+	display: none;
+}
+
 /* Modal CSS */
 .modal {
 		font-weight: bold;
