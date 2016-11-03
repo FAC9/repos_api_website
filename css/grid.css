@@ -27,6 +27,7 @@
     .col-m-12 {width: 100%;}
 
 		#title h1 { font-size: 3em; }
+    #title p {font-size:1.8em;}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -45,4 +46,5 @@
     .col-12 {width: 100%;}
 
 		#title h1 { font-size: 5em; }
+    #title p  {font-size: 3em;}
 }
