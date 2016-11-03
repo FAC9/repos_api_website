@@ -133,16 +133,15 @@ window.onclick = function(event) {
 
 // nav buttons
 
-var generateButton = document.getElementById("generateBtn");
+var generateButton = document.getElementsByClassName("generateBtn");
 var backBtn = document.getElementById("back");
-
 
 backBtn.addEventListener("click", function() {
   show("page2","page1");
 });
 
 
-generateButton.addEventListener("click", function() {
+generateButton.forEach(addEventListener("click", function() {
   show("page1", "page2");
   waterfall(url, [
     getNewMovieUrl,
@@ -156,7 +155,7 @@ generateButton.addEventListener("click", function() {
       throw new Error('test failed with error: ' + error)
     }
   })
-});
+}));
 
 function show(shown, hidden) {
   document.getElementById(shown).style.display='none';
