@@ -7,6 +7,7 @@ var currentMovie = {
   length: 0,
   rating: 0
 };
+
 var apikey = config.apikey;
 var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
 
@@ -68,8 +69,6 @@ function getRandomMovie(url, cb) {
   });
 }
 
-
-
 function getMovieDetails(id, cb){
   var movieUrl = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apikey + "&language=en-US";
   makeRequest(movieUrl, function(err, res){
@@ -80,10 +79,12 @@ function getMovieDetails(id, cb){
   });
 }
 
-
 //triggered by dom event listeners
-
-
+function updateDomWithMovieDetails(arg, cb){
+  console.log(document.getElementById("movieTitle").innerHtml);
+  document.getElementById("movieTitle").innerHTML = currentMovie.title;
+  return cb(null, currentMovie.id);
+}
 
 //helper functions
 function parseMovieDetails(movie){
@@ -132,7 +133,8 @@ generateButton.addEventListener("click", function() {
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
-    getMovieDetails
+    getMovieDetails,
+    updateDomWithMovieDetails
   ], function(error, result) {
     if (error) {
       throw new Error('test failed with error: ' + error)
