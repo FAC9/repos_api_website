@@ -8,6 +8,7 @@ var currentMovie = {
   rating: 0,
   gif: ""
 };
+
 var apikey = config.apikey;
 var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apikey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
 
@@ -69,8 +70,6 @@ function getRandomMovie(url, cb) {
   });
 }
 
-
-
 function getMovieDetails(id, cb){
   var movieUrl = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apikey + "&language=en-US";
   makeRequest(movieUrl, function(err, res){
@@ -92,8 +91,14 @@ function getGiphy(title, cb){
 }
 
 //triggered by dom event listeners
-
-
+function updateDomWithMovieDetails(arg, cb){
+  document.getElementById("movieTitle").innerHTML = currentMovie.title;
+  document.getElementById("summary").innerHTML = currentMovie.summary;
+  document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
+  document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
+  document.getElementById("movRating").innerHTML = "Rating: " + currentMovie.rating;
+  return cb(null, currentMovie.id);
+}
 
 //helper functions
 function parseMovieDetails(movie){
@@ -143,7 +148,9 @@ generateButton.addEventListener("click", function() {
     getNewMovieUrl,
     getRandomMovie,
     getMovieDetails,
-    getGiphy
+    getMovieDetails,
+    getGiphy,
+    updateDomWithMovieDetails
   ], function(error, result) {
     if (error) {
       throw new Error('test failed with error: ' + error)
