@@ -9,6 +9,9 @@ body {
 		background-repeat: no-repeat;
 		min-height: 100%;
 		text-align: center;
+		-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
 }
 html{
   height: 100%;
@@ -27,9 +30,9 @@ body::after {
   filter: grayscale(0.8);
 }
 
-
 #filters {
 	margin-top: 80px;
+	font-family:Verdana;
 }
 
 .f-button {
@@ -92,12 +95,23 @@ section {
 	background-color: transparent;
 	cursor: pointer;
 	outline:0;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 #back {
 	float:left;
 	background-color: transparent;
 	cursor: pointer;
 	outline:0;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.filterTitle {
+	font-size:1.4em;
+	text-align: left;
+	color:white;
+
 }
 .f-button {
 	background-color:#eae0c2;
@@ -137,6 +151,12 @@ section {
 	width:
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+	position: fixed;
+ top: 90%;
+ left: 50%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
+ outline: none;
 }
 .generateBtn:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
@@ -148,18 +168,8 @@ section {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
 	background-color:#ccc2a6;
 }
-#generateBtn1:active {
-	position:relative;
-	top:3px;
-}
 
-#generateBtn2 {
-	position: fixed;
- top: 90%;
- left: 50%;
- /* bring your own prefixes */
- transform: translate(-50%, -50%);
-}
+
 
 .f-button:active {
 	position:relative;
@@ -208,6 +218,8 @@ display: inline-block;
 
 /* Modal CSS */
 .modal {
+		font-weight: bold;
+		font-size: 1.3em;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -224,7 +236,7 @@ display: inline-block;
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color:#ccc2a6 ;
     margin: auto;
     padding: 0;
     width: 80%;
@@ -234,7 +246,18 @@ display: inline-block;
     animation-name: animatetop;
     animation-duration: 0.4s
 }
+.modal-header {
+    padding: 2px 16px;
+		height:40px;
+    background-color:#505739 ;
+    color: #ccc2a6;
+		font-size: 1.8em;
+}
 
+.modal-body {
+	padding: 2px 16px;
+	color: black;
+}
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
@@ -259,15 +282,4 @@ display: inline-block;
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #901a1d;
-    color: white;
-}
-
-.modal-body {
-	padding: 2px 16px;
-	color: black;
 }
