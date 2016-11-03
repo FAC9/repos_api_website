@@ -3,7 +3,6 @@ body {
 	  font-family: 'lato', 'Dosis', sans-serif;
 		font-size: 0.9rem;
 		color:white;
-		font-weight: bold;
 		position: relative;
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
@@ -205,15 +204,22 @@ display: inline-block;
 }
 
 #synopsis {
-	font-size:1em;
+	font-size: 12px;
 	margin-bottom: 20px;
 }
 #stats {
-	font-size: 1.5em;
+	font-size: 14px;
+	line-height: 20px;
+	background-color: rgba(96, 96, 96, 0.8);
+	padding: 50px;
+	font-family: sans-serif;
+	font-weight: 100;
 }
 
 #summary-more {
 	display: none;
+	cursor: pointer;
+	font-weight: 900;
 }
 
 /* Modal CSS */
