@@ -68,6 +68,8 @@ function getRandomMovie(url, cb) {
   });
 }
 
+
+
 function getMovieDetails(id, cb){
   var movieUrl = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apikey + "&language=en-US";
   makeRequest(movieUrl, function(err, res){
@@ -78,29 +80,10 @@ function getMovieDetails(id, cb){
   });
 }
 
+
 //triggered by dom event listeners
 
-var generateButton = document.getElementById("generateBtn");
 
-generateButton.addEventListener("click", function() {
-  waterfall(url, [
-    getNewMovieUrl,
-    getRandomMovie,
-    getMovieDetails
-  ], function(error, result) {
-    if (error) {
-      throw new Error('test failed with error: ' + error)
-    }
-  })
-});
-
-function show(shown, hidden) {
-  document.getElementById(shown).style.display='none';
-  document.getElementById(hidden).style.display='block';
-  return false;
-}
-
-show("page2", "page1");
 
 //helper functions
 function parseMovieDetails(movie){
@@ -131,4 +114,35 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+// nav buttons
+
+var generateButton = document.getElementById("generateBtn");
+var backBtn = document.getElementById("back");
+
+
+backBtn.addEventListener("click", function() {
+  show("page2","page1");
+});
+
+
+generateButton.addEventListener("click", function() {
+  show("page1", "page2");
+  waterfall(url, [
+    getNewMovieUrl,
+    getRandomMovie,
+    getMovieDetails
+  ], function(error, result) {
+    if (error) {
+      throw new Error('test failed with error: ' + error)
+    }
+  })
+
+});
+
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='none';
+  document.getElementById(hidden).style.display='block';
+  return false;
 }

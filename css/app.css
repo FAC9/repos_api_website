@@ -70,18 +70,18 @@ section {
 	font-size:3rem;
 }
 
-#infoIcon {
-  float:right;
-	min-width: 50px;
-}
-
 #plus {
 	float:right;
 	background-color: transparent;
 	cursor: pointer;
 	outline:0;
 }
-
+#back {
+	float:left;
+	background-color: transparent;
+	cursor: pointer;
+	outline:0;
+}
 .f-button {
 	background-color:#eae0c2;
 	cursor:pointer;
@@ -146,11 +146,11 @@ section {
   height: 50%;
 }
 @media only screen and (min-width: 768px) {
-	#posterSpace {width: 60%;height: 30%;}
+	#posterSpace {width: 50%;height: 25%;}
 }
 
 @media only screen and (min-width: 1024px) {
-	#posterSpace {width: 40%;height: 20%;}
+	#posterSpace {width: 30%;height: 15%;}
 }
 
 #filmPoster {
@@ -170,11 +170,11 @@ display: inline-block;
 }
 
 #synopsis {
-	font-size:1.6em;
+	font-size:1em;
 	margin-bottom: 20px;
 }
 #stats {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 /* Modal CSS */
