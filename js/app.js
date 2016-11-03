@@ -72,6 +72,12 @@ var waterfall = function(arg, tasks, cb) {
 
 
 var generateButton = document.getElementById("generateBtn");
+var backBtn = document.getElementById("back");
+
+
+backBtn.addEventListener("click", function() {
+  show("page2","page1");
+});
 
 generateButton.addEventListener("click", function() {
 
