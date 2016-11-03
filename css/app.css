@@ -29,7 +29,7 @@ body::after {
   filter: grayscale(0.8);
 }
 
-#filters {
+#filters, #filters-part-2 {
 	margin-top: 80px;
 	font-family:Verdana;
 }
