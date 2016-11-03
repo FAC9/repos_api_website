@@ -28,7 +28,7 @@ function makeRequest(url, cb) {
   };
   httpRequest.open('GET', url);
   httpRequest.send();
-}
+  }
 
 var waterfall = function(arg, tasks, cb) {
   var next = tasks[0]
@@ -78,19 +78,29 @@ function getMovieDetails(id, cb){
   });
 }
 
-
-
 //triggered by dom event listeners
-waterfall(url, [
-  getNewMovieUrl,
-  getRandomMovie,
-  getMovieDetails
-], function(error, result) {
-  if (error) {
-    throw new Error('test failed with error: ' + error)
-  }
+
+var generateButton = document.getElementById("generateBtn");
+
+generateButton.addEventListener("click", function() {
+  waterfall(url, [
+    getNewMovieUrl,
+    getRandomMovie,
+    getMovieDetails
+  ], function(error, result) {
+    if (error) {
+      throw new Error('test failed with error: ' + error)
+    }
+  })
 });
 
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='none';
+  document.getElementById(hidden).style.display='block';
+  return false;
+}
+
+show("page2", "page1");
 
 //helper functions
 function parseMovieDetails(movie){
