@@ -115,7 +115,7 @@ function parseMovieDetails(movie){
 
 function trucateSummary() {
   var fullText = currentMovie.summary;
-  var truncated = fullText.length <= 150 ? fullText : fullText.slice(0, 150) + "&nbsp;&nbsp;...";
+  var truncated = fullText.length <= 150 ? fullText : fullText.slice(0, 150).trim() + "...&nbsp;&nbsp;";
   document.getElementById("summary-more").style.display = fullText.length <= 150 ? "none" : "inline";
   return truncated;
 }
@@ -179,7 +179,9 @@ function show(shown, hidden) {
 }
 
 document.getElementById("summary-more").addEventListener("click", function() {
-  console.log("clicking");
-  document.getElementById("summary").innerHTML = currentMovie.summary;
-  this.style.display = "none";
+  console.log(this.innerHTML);
+  var truncated = this.innerHTML == "See more";
+  console.log(truncated);
+  document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
+  this.innerHTML = !!(truncated) ? "See less" : "See more";
 })
