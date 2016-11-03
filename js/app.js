@@ -158,6 +158,9 @@ console.log(generateAll);
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
   show("page1", "page2");
+  if(document.getElementById("filter-genre-action").checked == true){
+    console.log("action clicked");
+  }
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
