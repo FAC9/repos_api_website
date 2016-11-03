@@ -114,13 +114,46 @@ function parseMovieDetails(movie){
 }
 
 function buildUrl(){
+  addGenres();
+  addYears();
+}
+
+function addGenres(){
   var arr = document.getElementsByClassName("genre-filter");
-  console.log(arr);
-  console.log('---------------')
-  console.log(arr[0].value);
-  if(document.getElementById("filter-genre-action").checked == true){
-    url += "&with_genres=" + document.getElementById("filter-genre-action").value;
+  if(!filterClicked(arr)){
+    return url;
   }
+  var counter = 0;
+  url += "&with_genres=";
+  for(i=0; i<arr.length; i++){
+    console.log(arr[i]);
+     if((arr[i]).checked == true){
+        if(counter==0){
+        counter++;
+        url += arr[i].value;
+      } else url+=","+arr[i].value;
+    }
+  }
+}
+
+function addYears(){
+  var arr = document.getElementsByClassName("year-filter");
+  if(!filterClicked(arr)){
+    return url;
+  }
+  var counter = 0;
+  
+
+
+  url += "&with_genres=";
+}
+
+function filterClicked(arr){
+    var flag = false;
+    for(i=0; i<arr.length; i++){
+      if(arr[i].checked) flag=true;
+    }
+    return flag;
 }
 
 function trucateSummary() {
