@@ -9,6 +9,7 @@ body {
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		min-height: 100%;
+		text-align: center;
 }
 html{
   height: 100%;
@@ -24,13 +25,12 @@ body::after {
   right: 0;
   position: absolute;
   z-index: -1;
-  filter: grayscale(0.6);
+  filter: grayscale(0.8);
 }
 
 
 #filters {
 	margin-top: 80px;
-
 }
 
 .f-button {
@@ -56,10 +56,8 @@ section {
 
 #generate {
 	text-align: center;
-	height:100px;
+	height:150px;
 }
-
-
 
 #nav {
 	margin-bottom:20px;
@@ -70,7 +68,7 @@ section {
 }
 
 #title h1 {
-	font-size:2rem;
+	font-size:3rem;
 }
 
 #infoIcon {
@@ -83,20 +81,10 @@ section {
 }
 
 .f-button {
-	-moz-box-shadow: 0px 2px 0px 0px #1c1b18;
-	-webkit-box-shadow: 0px 2px 0px 0px #1c1b18;
-	box-shadow: 0px 2px 0px 0px #1c1b18;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eae0c2), color-stop(1, #ccc2a6));
-	background:-moz-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-	background:-webkit-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-	background:-o-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-	background:-ms-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
 	background-color:#eae0c2;
 	cursor:pointer;
 	color:#505739;
-		font-family:Verdana;
+	font-family:Verdana;
 	font-size:15px;
 	font-weight:600;
 	padding:10px 16px;
@@ -126,6 +114,8 @@ section {
 	font-size:23px;
 	font-weight:bold;
 	padding:10px 16px;
+	height:80px;
+	width:
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 }
@@ -149,4 +139,40 @@ section {
 .f-button:active {
 	position:relative;
 	top:2px;
+}
+
+#posterSpace {
+	width: 80%;
+  height: 50%;
+}
+@media only screen and (min-width: 768px) {
+	#posterSpace {width: 60%;height: 30%;}
+}
+
+@media only screen and (min-width: 1024px) {
+	#posterSpace {width: 40%;height: 20%;}
+}
+
+#filmPoster {
+display: inline-block;
+ vertical-align: middle;
+ max-height: 100%;
+ max-width: 100%;
+ margin-bottom:30px;
+}
+/*temp just for making pages */
+#page1 {
+	display:block;
+}
+
+#page2 {
+	display:none;
+}
+
+#synopsis {
+	font-size:1.6em;
+	margin-bottom: 20px;
+}
+#stats {
+	font-size: 2em;
 }
