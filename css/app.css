@@ -5,16 +5,28 @@ body {
 		font-size: 0.9rem;
 		color:white;
 		font-weight: bold;
+		position: relative;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 100%;
+}
+html{
+  height: 100%;
 }
 
-#page1 {
-		background-image: url(../images/seats.jpg..jpg);
-		background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-		height:100%;
-
+body::after {
+  content: "";
+  background: url(../images/seats.jpg) no-repeat center center;
+  background-size:cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  filter: grayscale(0.6);
 }
+
 
 #filters {
 	margin-top: 80px;
@@ -33,7 +45,8 @@ body {
 }
 
 .filter-row {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+		overflow:hidden;
 }
 
 /*Horizontally aligning */
@@ -43,20 +56,26 @@ section {
 
 #generate {
 	text-align: center;
+	height:100px;
 }
 
 
+
+#nav {
+	margin-bottom:20px;
+
+}
 #title  {
   text-align: center;
 }
 
 #title h1 {
-	font-size:1.5rem;
+	font-size:2rem;
 }
 
 #infoIcon {
   float:right;
-  margin-right:10px;
+	min-width: 50px;
 }
 
 #plus {
@@ -79,10 +98,52 @@ section {
 	color:black;
 	font-family:"Lato";
 	font-size:15px;
+	font-weight:600;
+	padding:10px 16px;
+	text-decoration:none;
+}
+
+#generateBtn {
+	-moz-box-shadow: 0px 2px 0px 0px #1c1b18;
+	-webkit-box-shadow: 0px 2px 0px 0px #1c1b18;
+	box-shadow: 0px 2px 0px 0px #1c1b18;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eae0c2), color-stop(1, #ccc2a6));
+	background:-moz-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+	background:-webkit-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+	background:-o-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+	background:-ms-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
+	background-color:#eae0c2;
+	-moz-border-radius:23px;
+	-webkit-border-radius:23px;
+	border-radius:23px;
+	border:2px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Verdana;
+	font-size:23px;
 	font-weight:bold;
 	padding:10px 16px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+}
+#generateBtn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
+	background:-moz-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+	background:-webkit-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+	background:-o-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+	background:-ms-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
+	background-color:#ccc2a6;
+}
+#generateBtn:active {
+	position:relative;
+	top:3px;
+}
+
 }
 
 .f-button:active {
