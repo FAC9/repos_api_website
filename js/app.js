@@ -93,7 +93,8 @@ function getGiphy(title, cb){
 
 //triggered by dom event listeners
 function updateDomWithMovieDetails(arg, cb){
-  console.log("fffff");
+
+  document.getElementById("filmPoster").src = currentMovie.gif;
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
   document.getElementById("summary").innerHTML = currentMovie.summary;
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
@@ -104,7 +105,6 @@ function updateDomWithMovieDetails(arg, cb){
 
 //helper functions
 function parseMovieDetails(movie){
-  console.log("hhhhhhhhhhhh");
   currentMovie.id = movie.id;
   currentMovie.title= movie.title;
   currentMovie.summary = movie.overview;
@@ -136,7 +136,7 @@ window.onclick = function(event) {
 
 // nav buttons
 
-var generateButton = document.getElementsByClassName("generateBtn");
+var generateButton = document.getElementById("generateBtn1");
 var backBtn = document.getElementById("back");
 
 backBtn.addEventListener("click", function() {
@@ -144,7 +144,7 @@ backBtn.addEventListener("click", function() {
 });
 
 
-generateButton.forEach(addEventListener("click", function() {
+generateButton.addEventListener("click", function() {
   show("page1", "page2");
   waterfall(url, [
     getNewMovieUrl,
@@ -157,7 +157,7 @@ generateButton.forEach(addEventListener("click", function() {
       throw new Error('test failed with error: ' + error)
     }
   })
-}));
+});
 
 function show(shown, hidden) {
   document.getElementById(shown).style.display='none';
