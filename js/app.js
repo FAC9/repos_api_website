@@ -83,7 +83,6 @@ function getMovieDetails(id, cb){
 
 function getGiphy(title, cb){
   var gurl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=movie+" + title;
-  console.log(gurl, "GURRRLL");
   makeRequest(gurl, function(err, res){
     var apiResponse = JSON.parse(res);
     currentMovie.gif = apiResponse.data.fixed_height_downsampled_url;
@@ -116,44 +115,61 @@ function parseMovieDetails(movie){
 function buildUrl(){
   addGenres();
   addYears();
+  addRating();
 }
 
 function addGenres(){
-  var arr = document.getElementsByClassName("genre-filter");
-  if(!filterClicked(arr)){
-    return url;
+  var arr = filterClicked(document.getElementsByClassName("genre-filter"));
+  if(!arr.length){
+    return;
   }
   var counter = 0;
   url += "&with_genres=";
   for(i=0; i<arr.length; i++){
-    console.log(arr[i]);
-     if((arr[i]).checked == true){
         if(counter==0){
         counter++;
         url += arr[i].value;
-      } else url+=","+arr[i].value;
+      } else {
+        url+=","+arr[i].value;
+      }
     }
-  }
+    return;
 }
 
 function addYears(){
-  var arr = document.getElementsByClassName("year-filter");
-  if(!filterClicked(arr)){
-    return url;
+  var arr = filterClicked(document.getElementsByClassName("year-filter"));
+  if(!arr.length){
+    return;
   }
-  var counter = 0;
-  
+  var year = arr[0].value;
+  if(year == "2016"){
+    url += "&release_date.gte=2016-01-01";
+  } else if(year == "2010"){
+    url += "&release_date.gte=2010-01-01&release_date.lte=2015-12-31";
+  } else {
+    url += "&release_date.gte="+year+"-01-01&release_date.lte="+(parseInt(year)+9)+"-12-31";
+  }
+  return;
+}
 
-
-  url += "&with_genres=";
+function addRating(){
+  var arr = filterClicked(document.getElementsByClassName("rating-filter"));
+  if(!arr.length){
+    return;
+  }
+  var rating = arr[0].value;
+  url+="&vote_average.gte="+rating;
+  return;
 }
 
 function filterClicked(arr){
-    var flag = false;
-    for(i=0; i<arr.length; i++){
-      if(arr[i].checked) flag=true;
+  var filtered = [];
+  for(i=0; i<arr.length; i++){
+    if(arr[i].checked) {
+      filtered.push(arr[i]);
     }
-    return flag;
+  }
+  return filtered;
 }
 
 function trucateSummary() {
@@ -195,15 +211,11 @@ backBtn.addEventListener("click", function() {
 var generateAll = [];
 generateAll.push(document.getElementById("generateBtn1"));
 generateAll.push(document.getElementById("generateBtn2"));
-console.log(generateAll);
 
 
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
   show("page1", "page2");
-  // if(document.getElementById("filter-genre-action").checked == true){
-  //   console.log("action clicked");
-  // }
   buildUrl();
   waterfall(url, [
     getNewMovieUrl,
@@ -226,7 +238,6 @@ function show(shown, hidden) {
 }
 
 document.getElementById("summary-more").addEventListener("click", function() {
-  console.log("clicking");
   document.getElementById("summary").innerHTML = currentMovie.summary;
   this.style.display = "none";
 })
