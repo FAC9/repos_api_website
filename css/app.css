@@ -78,6 +78,9 @@ section {
 
 #plus {
 	float:right;
+	background-color: transparent;
+	cursor: pointer;
+	outline:0;
 }
 
 .f-button {
@@ -132,8 +135,6 @@ section {
 #generateBtn:active {
 	position:relative;
 	top:3px;
-}
-
 }
 
 .f-button:active {
