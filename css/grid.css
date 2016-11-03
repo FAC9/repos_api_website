@@ -1,11 +1,11 @@
 /* For mobile phones: */
 [class*="col-"] {
-    border: 1px solid black; */
     box-sizing: border-box;
     overflow: auto;
 }
 
 /* exclude buttons */
+.col-f-1 {width:8.33%;}
 .col-f-2 {width:16.66%;}
 .col-f-3 {width:25%;}
 .col-f-6 {width:50%;}
