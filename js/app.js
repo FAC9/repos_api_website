@@ -81,8 +81,11 @@ function getMovieDetails(id, cb){
 
 //triggered by dom event listeners
 function updateDomWithMovieDetails(arg, cb){
-  console.log(document.getElementById("movieTitle").innerHtml);
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
+  document.getElementById("summary").innerHTML = currentMovie.summary;
+  document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
+  document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
+  document.getElementById("movRating").innerHTML = "Rating: " + currentMovie.rating;
   return cb(null, currentMovie.id);
 }
 
