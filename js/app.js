@@ -80,10 +80,6 @@ function getMovieDetails(id, cb){
   });
 }
 
-<<<<<<< HEAD
-||||||| merged common ancestors
-
-=======
 function getGiphy(title, cb){
   var gurl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=movie+" + title;
   console.log(gurl, "GURRRLL");
@@ -94,7 +90,6 @@ function getGiphy(title, cb){
   })
 }
 
->>>>>>> e64fc9af09c6c71c25ecc01bf981a5fd63d42bc3
 //triggered by dom event listeners
 function updateDomWithMovieDetails(arg, cb){
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
@@ -152,15 +147,10 @@ generateButton.addEventListener("click", function() {
   waterfall(url, [
     getNewMovieUrl,
     getRandomMovie,
-<<<<<<< HEAD
     getMovieDetails,
+    getMovieDetails,
+    getGiphy,
     updateDomWithMovieDetails
-||||||| merged common ancestors
-    getMovieDetails
-=======
-    getMovieDetails,
-    getGiphy
->>>>>>> e64fc9af09c6c71c25ecc01bf981a5fd63d42bc3
   ], function(error, result) {
     if (error) {
       throw new Error('test failed with error: ' + error)
