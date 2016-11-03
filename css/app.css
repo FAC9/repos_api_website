@@ -70,7 +70,7 @@ section {
    margin: 0 auto;
 }
 
-#generate {
+.generate {
 	text-align: center;
 	height:150px;
 }
@@ -148,9 +148,17 @@ section {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
 	background-color:#ccc2a6;
 }
-#generateBtn:active {
+#generateBtn1:active {
 	position:relative;
 	top:3px;
+}
+
+#generateBtn2 {
+	position: fixed;
+ top: 90%;
+ left: 50%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
 }
 
 .f-button:active {
