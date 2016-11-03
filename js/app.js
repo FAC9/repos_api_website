@@ -96,7 +96,7 @@ function updateDomWithMovieDetails(arg, cb){
 
   document.getElementById("filmPoster").src = currentMovie.gif;
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
-  document.getElementById("summary").innerHTML = currentMovie.summary;
+  document.getElementById("summary").innerHTML = trucateSummary();
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
   document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
   document.getElementById("movRating").innerHTML = "Rating: " + currentMovie.rating;
@@ -111,6 +111,13 @@ function parseMovieDetails(movie){
   currentMovie.releaseYear = (movie.release_date.split("-"))[0];
   currentMovie.length = movie.runtime + " mins";
   currentMovie.rating = movie.vote_average;
+}
+
+function trucateSummary() {
+  var fullText = currentMovie.summary;
+  var truncated = fullText.length <= 150 ? fullText : fullText.slice(0, 150) + "...";
+  document.getElementById("summary-more").style.display = fullText.length <= 150 ? "none" : "inline";
+  return truncated;
 }
 
 <!-- MODAL CODE BELOW-->
@@ -170,3 +177,9 @@ function show(shown, hidden) {
   document.getElementById(hidden).style.display='block';
   return false;
 }
+
+document.getElementById("summary-more").addEventListener("click", function() {
+  console.log("clicking");
+  document.getElementById("summary").innerHTML = currentMovie.summary;
+  this.style.display = "none";
+})
