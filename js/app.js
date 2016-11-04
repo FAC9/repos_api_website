@@ -130,11 +130,9 @@ function trucateSummary() {
   return truncated;
 }
 
-<!-- MODAL CODE BELOW-->
+//MODAL CODE
 var modal = document.getElementById('myModal');
-
 var btn = document.getElementById("plus");
-
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
@@ -152,7 +150,6 @@ window.onclick = function(event) {
 }
 
 // nav buttons
-
 var backBtn = document.getElementById("back");
 backBtn.addEventListener("click", function() {
   show("page2","page1");
@@ -162,15 +159,11 @@ backBtn.addEventListener("click", function() {
 var generateAll = [];
 generateAll.push(document.getElementById("generateBtn1"));
 generateAll.push(document.getElementById("generateBtn2"));
-console.log(generateAll);
 
 
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
   show("page1", "page2");
-  // if(document.getElementById("filter-genre-action").checked == true){
-  //   console.log("action clicked");
-  // }
   buildUrl();
   waterfall(url, [
     getNewMovieUrl,
@@ -193,9 +186,7 @@ function show(shown, hidden) {
 }
 
 document.getElementById("summary-more").addEventListener("click", function() {
-  console.log(this.innerHTML);
   var truncated = this.innerHTML == "See more";
-  console.log(truncated);
   document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";
 })
