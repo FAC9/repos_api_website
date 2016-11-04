@@ -209,7 +209,7 @@ filtPopUpBtn.addEventListener("click", function() {
 });
 
 function disableButton() {
-  var genButtons = document.querySelectorAll(".generateBtn");
+  var genButtons = document.querySelectorAll(".generateMain");
   genButtons.forEach(function(b) {
     b.innerHTML = 'getting movie...';
     b.disabled = true;
@@ -218,7 +218,7 @@ function disableButton() {
 }
 
 function enableButton() {
-  var genButtons = document.querySelectorAll(".generateBtn");
+  var genButtons = document.querySelectorAll(".generateMain");
   genButtons.forEach(function(b) {
     b.innerHTML = "Generate";
     b.disabled = false;
@@ -228,7 +228,6 @@ function enableButton() {
 
 
 document.getElementById("summary-more").addEventListener("click", function() {
-
   var truncated = this.innerHTML == "See more";
   document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";
