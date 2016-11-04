@@ -196,14 +196,14 @@ var sum = document.getElementById("stats");     //hides summary when opening fil
 filtPopUpBtn.addEventListener("click", function() {
   if(filters2.style.display === "none") {
     filters2.style.display = "block";
-    filtPopUpBtn.innerHTML = "...";
+    filtPopUpBtn.innerHTML = "Hide filters";
     sum.style.display = "none";
   }
   else {
     filters2.style.display ="none";
     filtPopUpBtn.classList.remove('filters-showing');
     sum.style.display = "block";
-    filtPopUpBtn.innerHTML = "Filters";
+    filtPopUpBtn.innerHTML = "Show filters";
   }
   return false;
 });
