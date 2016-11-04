@@ -238,25 +238,27 @@ function show(shown, hidden) {
 }
 
 var filters2 = document.getElementById("filters-part-2");
-var filtPopUp = document.getElementById("filtz");
+var filtPopUpBtn = document.getElementById("filtz");
+var sum = document.getElementById("stats");     //hides summary when opening filters on page 2
 
-filtPopUp.addEventListener("click", function() {
-
-  if(filters2.style.display ="none") {
+filtPopUpBtn.addEventListener("click", function() {
+  if(filters2.style.display === "none") {
     filters2.style.display = "block";
+    filtPopUpBtn.innerHTML = "...";
+    sum.style.display = "none";
   }
-  else if(filters2.style.display = "block"){  //doesnt happen here
+  else {
     filters2.style.display ="none";
-    console.log(filters2.style.display);
+    filtPopUpBtn.classList.remove('filters-showing');
+    sum.style.display = "block";
+    filtPopUpBtn.innerHTML = "Filters";
   }
   return false;
 });
 
 document.getElementById("summary-more").addEventListener("click", function() {
-// <<<<<<< HEAD
-//   document.getElementById("summary").innerHTML = currentMovie.summary;
-//   this.style.display = "none";
-// =======
+
+
   console.log(this.innerHTML);
   var truncated = this.innerHTML == "See more";
   console.log(truncated);

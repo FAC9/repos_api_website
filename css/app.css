@@ -34,6 +34,20 @@ body::after {
 	font-family:Verdana;
 }
 
+#filters-part-2 {
+	position: fixed;
+ top: 54%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ outline: none;
+}
+
+.filters-showing {
+	background-color: #505739;
+	color: #ccc2a6;
+}
+
+
 .f-button {
   margin-left:0px;
   margin-right: 0px;
@@ -81,12 +95,17 @@ section {
 	margin-bottom:20px;
 
 }
-#title  {
+.title  {
   text-align: center;
 }
 
-#title h1 {
+.title h1 {
 	font-size:3rem;
+}
+
+#title2 {
+	margin-top: -40px;
+	margin-bottom: 15px;
 }
 
 #plus {
@@ -178,6 +197,7 @@ section {
 #posterSpace {
 	width: 80%;
   height: 50%;
+	margin-top: -50px;
 }
 @media only screen and (min-width: 768px) {
 	#posterSpace {width: 50%;height: 25%;}
@@ -296,4 +316,10 @@ display: inline-block;
  /* bring your own prefixes */
  transform: translate(-50%, -50%);
  outline: none;
+ min-width: 110px;
+}
+
+.filters-showing {
+	background-color: #505739;
+	color: #ccc2a6;
 }
