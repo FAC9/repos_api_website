@@ -194,6 +194,7 @@ function disableButton() {
     b.innerHTML = 'getting movie...';
     b.disabled = true;
   })
+  document.getElementById("filmPoster").style.filter = "opacity(40%)";
 }
 
 function enableButton() {
@@ -202,6 +203,7 @@ function enableButton() {
     b.innerHTML = "Generate";
     b.disabled = false;
   })
+  document.getElementById("filmPoster").style.filter = "opacity(100%)";
 }
 
 document.getElementById("summary-more").addEventListener("click", function() {
