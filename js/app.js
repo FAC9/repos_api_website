@@ -99,7 +99,7 @@ function updateDomWithMovieDetails(arg, cb){
   document.getElementById("summary").innerHTML = trucateSummary();
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
   document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
-  document.getElementById("movRating").innerHTML = "Rating: " + currentMovie.rating;
+  document.getElementById("movRating").innerHTML = "Viewer rating: " + currentMovie.rating;
   return cb(null, currentMovie.id);
 }
 
@@ -110,7 +110,7 @@ function parseMovieDetails(movie){
   currentMovie.summary = movie.overview;
   currentMovie.releaseYear = (movie.release_date.split("-"))[0];
   currentMovie.length = movie.runtime + " mins";
-  currentMovie.rating = movie.vote_average;
+  currentMovie.rating = movie.vote_average + " / 10";
 }
 
 function buildUrl(){
