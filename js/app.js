@@ -179,7 +179,7 @@ function trucateSummary() {
   return truncated;
 }
 
-<!-- MODAL CODE BELOW-->
+//MODAL CODE
 var modal = document.getElementById('myModal');
 
 var btn = document.getElementById("plus");
@@ -201,7 +201,6 @@ window.onclick = function(event) {
 }
 
 // nav buttons
-
 var backBtn = document.getElementById("back");
 backBtn.addEventListener("click", function() {
   show("page2","page1");
@@ -238,14 +237,8 @@ function show(shown, hidden) {
 }
 
 document.getElementById("summary-more").addEventListener("click", function() {
-// <<<<<<< HEAD
-//   document.getElementById("summary").innerHTML = currentMovie.summary;
-//   this.style.display = "none";
-// =======
-  console.log(this.innerHTML);
   var truncated = this.innerHTML == "See more";
   console.log(truncated);
   document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";
-//>>>>>>> master
 })
