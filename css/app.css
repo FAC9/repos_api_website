@@ -92,10 +92,6 @@ section {
 	height:150px;
 }
 
-#nav {
-	margin-bottom:20px;
-
-}
 
 .title  {
   text-align: center;
@@ -105,26 +101,35 @@ section {
 	font-size:3rem;
 }
 
+#title1 {
+	margin-top: 30px;
+}
 #title2 {
 	margin-top: -40px;
 	margin-bottom: 15px;
 }
 
 #plus {
-	float:right;
+	position: fixed;
+	top:0;
+	right:0;
 	background-color: transparent;
 	cursor: pointer;
 	outline:0;
 	margin-top: 5px;
 	margin-right: 5px;
+	margin-bottom:20px;
 }
 #back {
-	float:left;
+	position: fixed;
+	top: 0;
+	left:0;
 	background-color: transparent;
 	cursor: pointer;
 	outline:0;
 	margin-top: 5px;
 	margin-left: 5px;
+	margin-bottom:20px;
 }
 
 .filterTitle {
@@ -198,7 +203,8 @@ section {
 #posterSpace {
 	width: 80%;
   height: 50%;
-	margin-top: -50px;
+	margin-top: 20px;
+	margin-bottom: 15px;
 }
 @media only screen and (min-width: 768px) {
 	#posterSpace {width: 50%;height: 25%;}
@@ -324,7 +330,7 @@ section {
 .filters-showing {
 	background-color: #505739;
 	color: #ccc2a6;
-
+}
 
 /*MEDIA QUERIES FOR MOBILE */
 
