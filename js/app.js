@@ -83,6 +83,7 @@ function getMovieDetails(id, cb){
 
 function getGiphy(title, cb){
   var gurl = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=movie+" + title;
+  console.log(gurl, "GURRRLL");
   makeRequest(gurl, function(err, res){
     var apiResponse = JSON.parse(res);
     currentMovie.gif = apiResponse.data.fixed_height_downsampled_url;
@@ -113,63 +114,13 @@ function parseMovieDetails(movie){
 }
 
 function buildUrl(){
-  addGenres();
-  addYears();
-  addRating();
-}
-
-function addGenres(){
-  var arr = filterClicked(document.getElementsByClassName("genre-filter"));
-  if(!arr.length){
-    return;
+  var arr = document.getElementsByClassName("genre-filter");
+  console.log(arr);
+  console.log('---------------')
+  console.log(arr[0].value);
+  if(document.getElementById("filter-genre-action").checked == true){
+    url += "&with_genres=" + document.getElementById("filter-genre-action").value;
   }
-  var counter = 0;
-  url += "&with_genres=";
-  for(i=0; i<arr.length; i++){
-        if(counter==0){
-        counter++;
-        url += arr[i].value;
-      } else {
-        url+=","+arr[i].value;
-      }
-    }
-    return;
-}
-
-function addYears(){
-  var arr = filterClicked(document.getElementsByClassName("year-filter"));
-  if(!arr.length){
-    return;
-  }
-  var year = arr[0].value;
-  if(year == "2016"){
-    url += "&release_date.gte=2016-01-01";
-  } else if(year == "2010"){
-    url += "&release_date.gte=2010-01-01&release_date.lte=2015-12-31";
-  } else {
-    url += "&release_date.gte="+year+"-01-01&release_date.lte="+(parseInt(year)+9)+"-12-31";
-  }
-  return;
-}
-
-function addRating(){
-  var arr = filterClicked(document.getElementsByClassName("rating-filter"));
-  if(!arr.length){
-    return;
-  }
-  var rating = arr[0].value;
-  url+="&vote_average.gte="+rating;
-  return;
-}
-
-function filterClicked(arr){
-  var filtered = [];
-  for(i=0; i<arr.length; i++){
-    if(arr[i].checked) {
-      filtered.push(arr[i]);
-    }
-  }
-  return filtered;
 }
 
 function trucateSummary() {
@@ -181,9 +132,7 @@ function trucateSummary() {
 
 //MODAL CODE
 var modal = document.getElementById('myModal');
-
 var btn = document.getElementById("plus");
-
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
@@ -238,7 +187,6 @@ function show(shown, hidden) {
 
 document.getElementById("summary-more").addEventListener("click", function() {
   var truncated = this.innerHTML == "See more";
-  console.log(truncated);
   document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";
 })
