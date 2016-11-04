@@ -237,6 +237,21 @@ function show(shown, hidden) {
   return false;
 }
 
+var filters2 = document.getElementById("filters-part-2");
+var filtPopUp = document.getElementById("filtz");
+
+filtPopUp.addEventListener("click", function() {
+
+  if(filters2.style.display ="none") {
+    filters2.style.display = "block";
+  }
+  else if(filters2.style.display = "block"){  //doesnt happen here
+    filters2.style.display ="none";
+    console.log(filters2.style.display);
+  }
+  return false;
+});
+
 document.getElementById("summary-more").addEventListener("click", function() {
 // <<<<<<< HEAD
 //   document.getElementById("summary").innerHTML = currentMovie.summary;

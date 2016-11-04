@@ -289,3 +289,11 @@ display: inline-block;
     text-decoration: none;
     cursor: pointer;
 }
+#filtz {
+	position: fixed;
+ top: 90%;
+ left: 90%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
+ outline: none;
+}
