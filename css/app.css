@@ -65,6 +65,7 @@ body::after {
 		overflow:hidden;
 }
 
+
 input:checked + label {
 	background-color: #505739;
 	color: #eae0c2;
@@ -166,7 +167,6 @@ section {
 	font-weight:bold;
 	padding:10px 16px;
 	height:80px;
-	width:
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 	position: fixed;
@@ -280,7 +280,7 @@ display: inline-block;
 		font-size: 1.8em;
 }
 
-.modal-body {
+.modal-body {f
 	padding: 2px 16px;
 	color: black;
 }
@@ -309,6 +309,7 @@ display: inline-block;
     text-decoration: none;
     cursor: pointer;
 }
+
 #filtz {
 	position: fixed;
  top: 90%;
@@ -322,4 +323,11 @@ display: inline-block;
 .filters-showing {
 	background-color: #505739;
 	color: #ccc2a6;
+
+
+/*MEDIA QUERIES FOR MOBILE */
+
+@media only screen and (max-width: 768px) {
+	.f-button {font-size: 0.8em;}
+	.generateBtn {max-width: 200px; height:50px;}
 }

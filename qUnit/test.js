@@ -60,38 +60,33 @@ QUnit.test( "Test for rating date title", function( assert ) {
 });
 
 QUnit.test( "Test for generate button",  function( assert ) {
-  var actual = document.getElementById('generateBtn').innerHTML;
+  var actual = document.getElementById('generateBtn1').innerHTML;
   assert.ok(actual === 'Generate', "Generate button exists" );
 });
 
 QUnit.test( "Test for 2016 button", function( assert ) {
   var actual = document.getElementById("2016").innerHTML;
-  assert.ok(actual === '2016', "2016 button exists" );
+  assert.ok(actual === '2016+', "2016 button exists" );
 });
 
-QUnit.test( "Test for 2015 button", function( assert ) {
+QUnit.test( "Test for 2010-15 button", function( assert ) {
   var actual = document.getElementById("2015").innerHTML;
-  assert.ok(actual === '2015', "2015 button exists" );
-});
-
-QUnit.test( "Test for 2010-2014 button", function( assert ) {
-  var actual = document.getElementById("2010-2014").innerHTML;
-  assert.ok(actual === '2010-2014', "2010-2014 button exists" );
+  assert.ok(actual === '2010-15', "2010-15 button exists" );
 });
 
 QUnit.test( "Test for 00 button", function( assert ) {
   var actual = document.getElementById('00').innerHTML;
-  assert.ok(actual === "00's", "00 button exists" );
+  assert.ok(actual === "00s", "00 button exists" );
 });
 
 QUnit.test( "Test for 90 button", function( assert ) {
   var actual = document.getElementById('90').innerHTML;
-  assert.ok(actual === "90's", "90 button exists" );
+  assert.ok(actual === "90s", "90 button exists" );
 });
 
 QUnit.test( "Test for 80 button", function( assert ) {
   var actual = document.getElementById("80").innerHTML;
-  assert.ok(actual === "80's", "80 button exists" );
+  assert.ok(actual === "80s", "80 button exists" );
 });
 
 QUnit.test( "Test for 8+ button", function( assert ) {

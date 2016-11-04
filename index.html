@@ -20,11 +20,11 @@
 
 <body>
 <!--page 1-->
+<button id="plus" class="material-icons" style="font-size:60px;color:white">add_circle</button>
+
 <section id="page1" class= "col-12">
 
   <section id ="nav" class="col-12">
-
-  <button id="plus" class="material-icons" style="font-size:60px;color:white">add_circle</button>
 
   </section>
 
@@ -38,60 +38,59 @@
       <p id="genreTitle" class="filterTitle">Genre</p>
       <!--genre row 1-->
       <input id="filter-genre-action" type="checkbox" class="vis-hidden genre-filter" value="28" />
-      <label for="filter-genre-action" class="f-button col-f-3">Action</label>
+      <label id="action" for="filter-genre-action" class="f-button col-f-3">Action</label>
       <input id="filter-genre-animation" type="checkbox" class="vis-hidden genre-filter" value="16" />
-      <label for="filter-genre-animation" class="f-button col-f-3">Animation</label>
+      <label id="animation" for="filter-genre-animation" class="f-button col-f-3">Animation</label>
       <input id="filter-genre-comedy" type="checkbox" class="vis-hidden genre-filter" value="35" />
-      <label for="filter-genre-comedy" class="f-button col-f-3">Comedy</label>
+      <label id="comedy" for="filter-genre-comedy" class="f-button col-f-3">Comedy</label>
       <input id="filter-genre-family" type="checkbox" class="vis-hidden genre-filter" value="10751" />
-      <label for="filter-genre-family" class="f-button col-f-3">Family</label>
+      <label id="family" for="filter-genre-family" class="f-button col-f-3">Family</label>
       <!--genre row 2-->
       <input id="filter-genre-horror" type="checkbox" class="vis-hidden genre-filter" value="27" />
-      <label for="filter-genre-horror" class="f-button col-f-3">Horror</label>
+      <label id="horror" for="filter-genre-horror" class="f-button col-f-3">Horror</label>
       <input id="filter-genre-romance" type="checkbox" class="vis-hidden genre-filter" value="10749" />
-      <label for="filter-genre-romance" class="f-button col-f-3">Romance</label>
+      <label id="romance" for="filter-genre-romance" class="f-button col-f-3">Romance</label>
       <input id="filter-genre-SciFi" type="checkbox" class="vis-hidden genre-filter" value="878" />
-      <label for="filter-genre-SciFi" class="f-button col-f-3">SciFi</label>
+      <label id="scifi" for="filter-genre-SciFi" class="f-button col-f-3">SciFi</label>
       <input id="filter-genre-thriller" type="checkbox" class="vis-hidden genre-filter" value="53" />
-      <label for="filter-genre-thriller" class="f-button col-f-3">Thriller</label>
+      <label id="thriller" for="filter-genre-thriller" class="f-button col-f-3">Thriller</label>
     </section>
 
     <section id="releaseDate" class="filter-row">
       <p id="releaseDateTitle" class="filterTitle">Release Date</p>
       <input id="filter-date-2016" type="checkbox" class="vis-hidden year-filter" value="2016" />
-      <label for="filter-date-2016" class="f-button col-f-2">2016+</label>
+      <label id="2016" for="filter-date-2016" class="f-button col-f-2">2016+</label>
 
       <input id="filter-date-2010-15" type="checkbox" class="vis-hidden year-filter" value="2010" />
-      <label for="filter-date-2010-15" class="f-button col-f-2">2010-15</label>
+      <label id="2015"for="filter-date-2010-15" class="f-button col-f-2">2010-15</label>
 
       <input id="filter-date-00s" type="checkbox" class="vis-hidden year-filter" value="2000" />
-      <label for="filter-date-00s" class="f-button col-f-2">00s</label>
+      <label id="00" for="filter-date-00s" class="f-button col-f-2">00s</label>
 
       <input id="filter-date-90s" type="checkbox" class="vis-hidden year-filter" value="1990" />
-      <label for="filter-date-90s" class="f-button col-f-2">90s</label>
+      <label id="90" for="filter-date-90s" class="f-button col-f-2">90s</label>
 
       <input id="filter-date-80s" type="checkbox" class="vis-hidden year-filter" value="1980" />
-      <label for="filter-date-80s" class="f-button col-f-2">80s</label>
+      <label id="80" for="filter-date-80s" class="f-button col-f-2">80s</label>
 
       <input id="filter-date-70s" type="checkbox" class="vis-hidden year-filter" value="1970" />
-      <label for="filter-date-70s" class="f-button col-f-2">70s</label>
+      <label id="70" for="filter-date-70s" class="f-button col-f-2">70s</label>
     </section>
 
     <section id="rating" class="filter-row">
       <p id="ratingTitle" class="filterTitle">Rating</p>
       <input id="filter-rating-8" type="radio" class="vis-hidden rating-filter" name="filter-rating" value="8"/>
-      <label for="filter-rating-8" class="f-button col-f-3">8+</label>
+      <label id="8" for="filter-rating-8" class="f-button col-f-3">8+</label>
 
 
       <input id="filter-rating-7" type="radio" class="vis-hidden rating-filter" name="filter-rating" value="7"/>
-      <label for="filter-rating-7" class="f-button col-f-3">7+</label>
+      <label id="7" for="filter-rating-7" class="f-button col-f-3">7+</label>
 
       <input id="filter-rating-6" type="radio" class="vis-hidden rating-filter" name="filter-rating" value="6"/>
-      <label for="filter-rating-6" class="f-button col-f-3">6+</label>
+      <label id="6" for="filter-rating-6" class="f-button col-f-3">6+</label>
 
       <input id="filter-rating-5" type="radio" class="vis-hidden rating-filter" name="filter-rating" value="5"/>
-
-      <label for="filter-rating-5" class="f-button col-f-3">5+</label>
+      <label id="5" for="filter-rating-5" class="f-button col-f-3">5+</label>
     </section>
 
   </section>
@@ -100,37 +99,12 @@
     <button id="generateBtn1" class="generateBtn button col-f-6 col-m-4 col-3">Generate</button>
   </section>
 
-  <!--MODAL CODE-->
-  <button id="plus">Open Modal</button>
-
-  <div id="myModal" class="modal">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">×</span>
-        <h2>Movie Generator</h2>
-      </div>
-      <div class="modal-body">
-        <br>
-        <p>Created by:</p>
-        <br>
-        <ul>Shireen Zoaby</ul>
-        <ul>Emily Bertwistle</ul>
-        <ul>Will Savage</ul>
-        <ul>Peter Rhodes</ul>
-        <br>
-      </div>
-    </div>
-
-  </div>
-
 </section>
 
 <!--page2-->
 
 <section id ="page2" class="col-12">
   <section id ="nav" class="col-12">
-      <button id="plus" class="material-icons" style="font-size:60px;color:white">add_circle</button>
       <button id="back" class="material-icons" style="font-size:60px;color:white">arrow_back</button>
 
   </section>
@@ -216,34 +190,34 @@
   </section>
 </section>
 
-<div id="myModal" class="modal">
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h2>Movie Generator</h2>
-    </div>
-    <div class="modal-body">
-      <br>
-      <p>Created by:</p>
-      <br>
-      <ul>Shireen Zoaby</ul>
-      <ul>Emily Bertwistle</ul>
-      <ul>Will Savage</ul>
-      <ul>Peter Rhodes</ul>
-      <br>
+<section id="modalModal">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">×</span>
+        <h2>Movie Generator</h2>
+      </div>
+      <div class="modal-body">
+        <br>
+        <p>Created by:</p>
+        <br>
+        <ul>Shireen Zoaby</ul>
+        <ul>Emily Bertwistle</ul>
+        <ul>Will Savage</ul>
+        <ul>Peter Rhodes</ul>
+        <br>
+      </div>
     </div>
   </div>
+</section>
 
-</div>
 
-
-<!--TESTS
+<!--TESTS-->
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
 <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
 <script src="./qUnit/test.js"></script>
--->
+
 <script src="./js/config.js"></script>
 <script src="./js/app.js"></script>
 
