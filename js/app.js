@@ -100,6 +100,7 @@ function updateDomWithMovieDetails(arg, cb){
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
   document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
   document.getElementById("movRating").innerHTML = "Viewer rating: " + currentMovie.rating;
+  enableButton();
   return cb(null, currentMovie.id);
 }
 
@@ -163,6 +164,7 @@ generateAll.push(document.getElementById("generateBtn2"));
 
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
+  disableButton();
   show("page1", "page2");
   buildUrl();
   waterfall(url, [
@@ -176,6 +178,7 @@ generateAll.forEach(function(element) {
       throw new Error('test failed with error: ' + error)
     }
     })
+
   })
 });
 
@@ -184,6 +187,7 @@ function show(shown, hidden) {
   document.getElementById(hidden).style.display='block';
   return false;
 }
+
 
 var filters2 = document.getElementById("filters-part-2");
 var filtPopUpBtn = document.getElementById("filtz");
@@ -203,6 +207,23 @@ filtPopUpBtn.addEventListener("click", function() {
   }
   return false;
 });
+
+function disableButton() {
+  var genButtons = document.querySelectorAll(".generateBtn");
+  genButtons.forEach(function(b) {
+    b.innerHTML = 'getting movie...';
+    b.disabled = true;
+  })
+}
+
+function enableButton() {
+  var genButtons = document.querySelectorAll(".generateBtn");
+  genButtons.forEach(function(b) {
+    b.innerHTML = "Generate";
+    b.disabled = false;
+  })
+}
+
 
 document.getElementById("summary-more").addEventListener("click", function() {
 

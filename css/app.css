@@ -1,32 +1,32 @@
-/* Fixing the button mysterious margin */
+/* Fixing the button mysterious margin! */
 body {
-	  font-family: 'lato', 'Dosis', sans-serif;
-		font-size: 0.9rem;
-		color:white;
-		position: relative;
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		min-height: 100%;
-		text-align: center;
-		-moz-user-select: -moz-none;
-   	-khtml-user-select: none;
-   	-webkit-user-select: none;
+	font-family: 'lato', 'Dosis', sans-serif;
+	font-size: 0.9rem;
+	color:white;
+	position: relative;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-height: 100%;
+	text-align: center;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
 }
 html{
-  height: 100%;
+	height: 100%;
 }
 
 body::after {
-  content: "";
-  background: url(../Images/seats.jpg) no-repeat center center;
-  background-size:cover;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  filter: grayscale(0.8);
+	content: "";
+	background: url(../Images/seats.jpg) no-repeat center center;
+	background-size:cover;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	filter: grayscale(0.8);
 }
 
 #filters, #filters-part-2 {
@@ -49,10 +49,10 @@ body::after {
 
 
 .f-button {
-  margin-left:0px;
-  margin-right: 0px;
-  float:left;
-  white-space: nowrap;
+	margin-left:0px;
+	margin-right: 0px;
+	float:left;
+	white-space: nowrap;
 	opacity: 1;
 }
 
@@ -61,8 +61,8 @@ body::after {
 }
 
 .filter-row {
-    margin-bottom: 15px;
-		overflow:hidden;
+	margin-bottom: 15px;
+	overflow:hidden;
 }
 
 
@@ -72,19 +72,19 @@ input:checked + label {
 }
 
 .vis-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 /*Horizontally aligning */
 section {
-   margin: 0 auto;
+	margin: 0 auto;
 }
 
 .generate {
@@ -96,6 +96,7 @@ section {
 	margin-bottom:20px;
 
 }
+
 .title  {
   text-align: center;
 }
@@ -170,11 +171,11 @@ section {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
 	position: fixed;
- top: 90%;
- left: 50%;
- /* bring your own prefixes */
- transform: translate(-50%, -50%);
- outline: none;
+	top: 90%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+	outline: none;
 }
 .generateBtn:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
@@ -208,11 +209,11 @@ section {
 }
 
 #filmPoster {
-display: inline-block;
- vertical-align: middle;
- max-height: 100%;
- max-width: 100%;
- margin-bottom:30px;
+	display: inline-block;
+	vertical-align: middle;
+	max-height: 100%;
+	max-width: 100%;
+	margin-bottom:30px;
 }
 /*temp just for making pages */
 #page1 {
@@ -244,40 +245,40 @@ display: inline-block;
 
 /* Modal CSS */
 .modal {
-		font-weight: bold;
-		font-size: 1.3em;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	font-weight: bold;
+	font-size: 1.3em;
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
-    background-color:#ccc2a6 ;
-    margin: auto;
-    padding: 0;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+	position: relative;
+	background-color:#ccc2a6 ;
+	margin: auto;
+	padding: 0;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s
 }
 .modal-header {
-    padding: 2px 16px;
-		height:40px;
-    background-color:#505739 ;
-    color: #ccc2a6;
-		font-size: 1.8em;
+	padding: 2px 16px;
+	height:40px;
+	background-color:#505739 ;
+	color: #ccc2a6;
+	font-size: 1.8em;
 }
 
 .modal-body {f
@@ -286,28 +287,28 @@ display: inline-block;
 }
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+	from {top:-300px; opacity:0}
+	to {top:0; opacity:1}
 }
 
 /* The Close Button */
 .close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 #filtz {
