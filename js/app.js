@@ -57,7 +57,7 @@ function getNewMovieUrl(_, cb) {
     var randomPage = Math.floor(Math.random() * (total_pages > 1000 ? 1000 : total_pages)) + 1;
     url += "&page=" + randomPage; //adds parameter to url to randomise search results
     return cb(null, url);
-  })
+  });
 }
 
 function getRandomMovie(url, cb) {
@@ -88,7 +88,7 @@ function getGiphy(title, cb){
     var apiResponse = JSON.parse(res);
     currentMovie.gif = apiResponse.data.fixed_height_downsampled_url;
     return cb(null, currentMovie);
-  })
+  });
 }
 
 //triggered by dom event listeners
@@ -96,7 +96,7 @@ function updateDomWithMovieDetails(arg, cb){
 
   document.getElementById("filmPoster").src = currentMovie.gif;
   document.getElementById("movieTitle").innerHTML = currentMovie.title;
-  document.getElementById("summary").innerHTML = trucateSummary();
+  document.getElementById("summary").innerHTML = truncateSummary();
   document.getElementById("year").innerHTML = "Year: " + currentMovie.releaseYear;
   document.getElementById("length").innerHTML = "Length: " + currentMovie.length;
   document.getElementById("movRating").innerHTML = "Viewer rating: " + currentMovie.rating;
@@ -124,7 +124,7 @@ function buildUrl(){
   }
 }
 
-function trucateSummary() {
+function truncateSummary() {
   var fullText = currentMovie.summary;
   var truncated = fullText.length <= 150 ? fullText : fullText.slice(0, 150).trim() + "...&nbsp;&nbsp;";
   document.getElementById("summary-more").style.display = fullText.length <= 150 ? "none" : "inline";
@@ -164,22 +164,21 @@ generateAll.push(document.getElementById("generateBtn2"));
 
 generateAll.forEach(function(element) {
   element.addEventListener("click", function() {
-  disableButton();
-  show("page1", "page2");
-  buildUrl();
-  waterfall(url, [
-    getNewMovieUrl,
-    getRandomMovie,
-    getMovieDetails,
-    getGiphy,
-    updateDomWithMovieDetails
-  ], function(error, result) {
-    if (error) {
-      throw new Error('test failed with error: ' + error)
-    }
-    })
-
-  })
+    disableButton();
+    show("page1", "page2");
+    buildUrl();
+    waterfall(url, [
+      getNewMovieUrl,
+      getRandomMovie,
+      getMovieDetails,
+      getGiphy,
+      updateDomWithMovieDetails
+    ], function(error, result) {
+      if (error) {
+        throw new Error('test failed with error: ' + error)
+      }
+    });
+  });
 });
 
 function show(shown, hidden) {
@@ -229,6 +228,6 @@ function enableButton() {
 
 document.getElementById("summary-more").addEventListener("click", function() {
   var truncated = this.innerHTML == "See more";
-  document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
+  document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : truncateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";
 })
