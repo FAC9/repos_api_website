@@ -188,6 +188,26 @@ function show(shown, hidden) {
   return false;
 }
 
+
+var filters2 = document.getElementById("filters-part-2");
+var filtPopUpBtn = document.getElementById("filtz");
+var sum = document.getElementById("stats");     //hides summary when opening filters on page 2
+
+filtPopUpBtn.addEventListener("click", function() {
+  if(filters2.style.display === "none") {
+    filters2.style.display = "block";
+    filtPopUpBtn.innerHTML = "...";
+    sum.style.display = "none";
+  }
+  else {
+    filters2.style.display ="none";
+    filtPopUpBtn.classList.remove('filters-showing');
+    sum.style.display = "block";
+    filtPopUpBtn.innerHTML = "Filters";
+  }
+  return false;
+});
+
 function disableButton() {
   var genButtons = document.querySelectorAll(".generateBtn");
   genButtons.forEach(function(b) {
@@ -204,7 +224,9 @@ function enableButton() {
   })
 }
 
+
 document.getElementById("summary-more").addEventListener("click", function() {
+
   var truncated = this.innerHTML == "See more";
   document.getElementById("summary").innerHTML = !!(truncated) ? (currentMovie.summary + "&nbsp;&nbsp;") : trucateSummary();
   this.innerHTML = !!(truncated) ? "See less" : "See more";

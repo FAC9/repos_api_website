@@ -27,8 +27,8 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 
-		#title h1 { font-size: 4em; }
-    #title p {font-size:1.8em;}
+		.title h1 { font-size: 4em; }
+    .title p {font-size:1.8em;}
 
 }
 
@@ -47,6 +47,6 @@
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-		#title h1 { font-size: 5em; }
-    #title p  {font-size: 3em;}
+		.title h1 { font-size: 5em; }
+    .title p  {font-size: 3em;}
 }
